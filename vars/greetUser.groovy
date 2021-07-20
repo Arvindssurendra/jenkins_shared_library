@@ -6,14 +6,14 @@ def call(String username = 'null', String designation = 'a') {
 	pipeline {
 		environment { 
 			USER_NAME = "${username}"
-			desig = "${designation}"
+			DESIG = "${designation}"
 		}	
 		agent any 
 		stages {
 			stage('GREET') {
 				steps {
 					echo "Hi ${USER_NAME}, How are you !"
-					echo "Your designation is ${desig}"
+					echo "Your designation is ${DESIG}"
 				}
 			}
 		}
